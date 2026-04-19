@@ -1,0 +1,8 @@
+torch
+onnx
+onnxruntime
+opencv-python
+numpy
+fastapi
+uvicorn
+pytest
