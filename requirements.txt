@@ -1,8 +1,5 @@
-torch
+ultralytics
 onnx
 onnxruntime
 opencv-python
 numpy
-fastapi
-uvicorn
-pytest
