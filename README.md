@@ -13,6 +13,7 @@
 - benchmark/benchmark_onnx_inference.py
 ```
 #### <h1 align="center"> Table of Benchmarking Results </h1> #### 
+<div align="center">
 
 |                        | Before Optimization (Best.pt) | After Optimization (ONNX FP32) |
 |:----------------------:|:-----------------------------:|:------------------------------:|
@@ -23,6 +24,7 @@
 | StDev latency (ms)     | 10.93                         | 10.64                          |
 | Total Time    (sec)    | 210.95                        | 187.49                         |
 | Images processed       | 2483                          | 2483                           | 
+</div>
 
 ### **Task 2 Post-Training Quantization** ### 
 
@@ -33,16 +35,18 @@
 - ONNX FP16 model -> branch: feature/inference-fp16       file: models/parking_detector_fp16.onnx
 - ONNX INT8 model -> branch: feature/inference-int8       file: models/parking_detector_int8.onnx
 ```
-#### <h1 align="center" Results Table </h1> ####
+#### <h1 align="center"> Results Table </h1> ####
 
+<div align="center">
 |                        | Best.pt | ONNX FP32 | ONNX FP16 | ONNX INT8 |
 |:----------------------:|:-------:|:---------:|:---------:|:---------:|
 | Model Size   (MB)      | 6.1     | 12        | 6         | 3.32      |
 | Throughput   (img/sec) | 11.77   | 13.24     | 12.23     | 14.10     |
 | Avg latency  (ms)      | 80.40   | 68.58     | 69.18     | 64.15     |
 | Accuracy     (%)       | 99.51   | 99.60     | 99.6      | 99.54     |
+</div>
 
-#### <h1 align="center" Quantization Recommendation </h1> ####
+#### <h1 align="center"> Quantization Recommendation </h1> ####
 ```text
 I established an FP32 baseline, optimized to FP16 for near-lossless acceleration, then evaluated INT8 for maximum edge throughput.
 Given the results in the table above, I would recommend the ONNX INT8 model for a power and latency constrained deployment.
