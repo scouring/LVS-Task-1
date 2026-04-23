@@ -116,7 +116,7 @@ This will:
 
 ### Benchmarking Workflow ###
 ```bash
-python -m benchmark.benchmark_inference.py
+python -m benchmark.benchmark_inference
 ```
 ```text
 This will calculate:
@@ -125,7 +125,7 @@ This will calculate:
 - throughput
 ```
 ```bash
-python -m benchmark.accuracy_best.py
+python -m benchmark.accuracy_best
 ```
 ```text
 This will calculate accuracy metrics:
