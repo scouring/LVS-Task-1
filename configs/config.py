@@ -4,7 +4,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parents[1]
 MODEL_PATH = BASE_DIR / "models" / "best.pt"
 
-INPUT_IMAGES_DIR = BASE_DIR / "data" / "val_images"
+INPUT_IMAGES_DIR = BASE_DIR / "data" / "validation_images"
 OUTPUT_DIR = BASE_DIR / "output" / "predictions"
 
 # YOLO settings
