@@ -1,18 +1,18 @@
-# LVS Take-Home Technical Problems #
+## LVS Take-Home Technical Problems ##
 
-## Task 1 ## 
+### Task 1 ### 
 
-### The branch *feature/inference-best.pt* - contains the model chosen for an edge deployment scenario with a markdown file explaining why it was selected. A benchmark script for this model is here also. ###
+#### The branch *feature/inference-best.pt* - contains the model chosen for an edge deployment scenario with a markdown file explaining why it was selected. A benchmark script for this model is here also. ####
 ```text
 - models/best.pt
 - benchmark/benchmark_inference.py
 ```
-### The branch *feature/inference-onnx* - contains the converted ONNX model file and a benchmarking script.
+#### The branch *feature/inference-onnx* - contains the converted ONNX model file and a benchmarking script.####
 ```text
 - models/parking_detector.onnx
 - benchmark/benchmark_onnx_inference.py
 ```
-### Table of Benchmarking Results ###
+#### Table of Benchmarking Results ####
 
 |                        | Before Optimization | After Optimization |
 |:----------------------:|:-------------------:|:------------------:|
