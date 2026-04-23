@@ -211,3 +211,4 @@ output/predictions
 
 #input
 data/validation_images
+data/validation_labels
