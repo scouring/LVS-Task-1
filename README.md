@@ -12,7 +12,7 @@
 - models/parking_detector.onnx
 - benchmark/benchmark_onnx_inference.py
 ```
-#### <h1 align="center"> Table of Benchmarking Results </h1> #### 
+ <h1 align="center"> #### Table of Benchmarking Results #### </h1>  
 <div align="center">
 
 |                        | Before Optimization (Best.pt) | After Optimization (ONNX FP32) |
