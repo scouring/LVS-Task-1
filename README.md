@@ -2,17 +2,17 @@
 
 ### **Task 1 - Model Optimization** ### 
 
-#### The branch *feature/inference-best.pt* - contains the model chosen for an edge deployment scenario with a markdown file explaining why it was selected. A benchmark script for this model is here also. ####
+#### The branch *feature/inference-best.pt* - contains the model chosen for an edge deployment scenario. This model was selected from a personal project in my repository because it used YOLOv8 and its metrics (precision & recall) were very good. It also has a large dataset for training, testing, and validating. A benchmark script for this model is also on this branch: ####
 ```text
 - models/best.pt
 - benchmark/benchmark_inference.py
 ```
-#### The branch *feature/inference-onnx* - contains the converted ONNX model file and a benchmarking script. ####
+#### The branch *feature/inference-onnx* - contains the converted ONNX model file and a benchmarking script: ####
 ```text
 - models/parking_detector.onnx
 - benchmark/benchmark_onnx_inference.py
 ```
-#### Table of Benchmarking Results ####
+#### <h1 align="center"> Table of Benchmarking Results </h1> #### 
 
 |                        | Before Optimization (Best.pt) | After Optimization (ONNX FP32) |
 |:----------------------:|:-----------------------------:|:------------------------------:|
@@ -26,14 +26,14 @@
 
 ### **Task 2 Post-Training Quantization** ### 
 
-#### The Quantized model artifacts: ####
+#### <h1 align="center"> The Quantized model artifacts: </h1> #### 
 ```text
 - Base model      -> branch: feature/inference-best.pt    file: models/best.pt
 - ONNX FP32 model -> branch: feature/inference-onnx       file: models/parking_detector.onnx
 - ONNX FP16 model -> branch: feature/inference-fp16       file: models/parking_detector_fp16.onnx
 - ONNX INT8 model -> branch: feature/inference-int8       file: models/parking_detector_int8.onnx
 ```
-#### Results Table ####
+#### <h1 align="center" Results Table </h1> ####
 
 |                        | Best.pt | ONNX FP32 | ONNX FP16 | ONNX INT8 |
 |:----------------------:|:-------:|:---------:|:---------:|:---------:|
@@ -42,7 +42,12 @@
 | Avg latency  (ms)      | 80.40   | 68.58     | 69.18     | 64.15     |
 | Accuracy     (%)       | 99.51   | 99.60     | 99.6      | 99.54     |
 
-#### Quantization Recommendation ####
+#### <h1 align="center" Quantization Recommendation </h1> ####
 ```text
-I established an FP32 baseline, optimized to FP16 for near-lossless acceleration, then evaluated INT8 for maximum edge throughput. Given the results in the table above, I would recommend the ONNX INT8 model for a power and latency constrained deployment. The ONNX INT8 model is the smallest of the four models. It also has the greatest throughput and the least latency. Its accuracy is not substantially lower than ONNX FP16. The FP16 models are usually the best trade-off between accuracy and latency. But given that this model will be deployed on a small edge device (a drone), I opt for ONNX INT8 model due to its lesser latency.
+I established an FP32 baseline, optimized to FP16 for near-lossless acceleration, then evaluated INT8 for maximum edge throughput.
+Given the results in the table above, I would recommend the ONNX INT8 model for a power and latency constrained deployment.
+The ONNX INT8 model is the smallest of the four models. It also has the greatest throughput and the least latency. Its accuracy is
+not substantially lower than ONNX FP16. The FP16 models are usually the best trade-off between accuracy and latency. But given that
+this model will be deployed on a small edge device (a drone), I opt for ONNX INT8 model due to its lesser latency.
+```
 
