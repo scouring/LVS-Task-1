@@ -36,14 +36,15 @@
 - ONNX INT8 model -> branch: feature/inference-int8       file: models/parking_detector_int8.onnx
 ```
 #### <h1 align="center"> Results Table </h1> ####
-
 <div align="center">
+
 |                        | Best.pt | ONNX FP32 | ONNX FP16 | ONNX INT8 |
 |:----------------------:|:-------:|:---------:|:---------:|:---------:|
 | Model Size   (MB)      | 6.1     | 12        | 6         | 3.32      |
 | Throughput   (img/sec) | 11.77   | 13.24     | 12.23     | 14.10     |
 | Avg latency  (ms)      | 80.40   | 68.58     | 69.18     | 64.15     |
 | Accuracy     (%)       | 99.51   | 99.60     | 99.6      | 99.54     |
+
 </div>
 
 #### <h1 align="center"> Quantization Recommendation </h1> ####
