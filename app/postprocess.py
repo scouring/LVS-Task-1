@@ -1,7 +1,11 @@
 import cv2
+import numpy as np
 
 
 def annotate_results(image, detections, conf_threshold=0.5):
+    # Cast FP16 outputs to FP32 for stable arithmetic
+    detections = detections.astype(np.float32)
+
     occupied_count = 0
     empty_count = 0
 
@@ -27,7 +31,6 @@ def annotate_results(image, detections, conf_threshold=0.5):
             color,
             2
         )
-
         cv2.putText(
             image,
             f"{label}: {conf:.2f}",

@@ -3,3 +3,4 @@ onnx
 onnxruntime
 opencv-python
 numpy
+onnxconverter-common
