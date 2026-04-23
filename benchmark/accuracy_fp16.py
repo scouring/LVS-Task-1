@@ -61,6 +61,12 @@ def evaluate():
     all_fn = 0
     per_image_results = []
 
+    print("\n===== ACCURACY EVALUATION START =====\n")
+    print(f"Images found    : {len(image_paths)}")
+    print(f"Labels dir      : {LABELS_DIR}")
+    print(f"Conf threshold  : {CONF_THRESHOLD}")
+    print(f"IoU threshold   : {IOU_THRESHOLD}\n")
+
     for image_path in image_paths:
         tensor, original = preprocess_image(str(image_path))
         img_h, img_w = original.shape[:2]
