@@ -1,6 +1,6 @@
 ## LVS Take-Home Technical Problems ##
 
-### **Task 1 - Model Optimization** ### 
+### I. **Task 1 - Model Optimization** ### 
 
 #### The branch *feature/inference-best.pt* - contains the model chosen for an edge deployment scenario. This model was selected from a personal project in my repository because it used YOLOv8 and its metrics (precision & recall) were very good. It also has a large dataset for training, testing, and validating. A benchmark script for this model is also on this branch: ####
 ```text
@@ -26,7 +26,7 @@
 | Images processed       | 2483                          | 2483                           | 
 </div>
 
-### **Task 2 Post-Training Quantization** ### 
+### II. **Task 2 Post-Training Quantization** ### 
 
 #### <h3 align="center"> The Quantized model artifacts: </h3> #### 
 ```text
