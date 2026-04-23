@@ -49,10 +49,11 @@
 
 #### <h1 align="center"> Quantization Recommendation </h1> ####
 ```text
-I established an FP32 baseline, optimized to FP16 for near-lossless acceleration, then evaluated INT8 for maximum edge throughput.
-Given the results in the table above, I would recommend the ONNX INT8 model for a power and latency constrained deployment.
-The ONNX INT8 model is the smallest of the four models. It also has the greatest throughput and the least latency. Its accuracy is
-not substantially lower than ONNX FP16. The FP16 models are usually the best trade-off between accuracy and latency. But given that
-this model will be deployed on a small edge device (a drone), I opt for ONNX INT8 model due to its lesser latency.
+I established an FP32 baseline, optimized to FP16 for near-lossless acceleration, then evaluated INT8 for maximum edge
+throughput. Given the results in the table above, I would recommend the ONNX INT8 model for a power and latency
+constrained deployment. The ONNX INT8 model is the smallest of the four models. It also has the greatest throughput
+and the least latency. Its accuracy is not substantially lower than ONNX FP16. The FP16 models are usually the best
+trade-off between accuracy and latency. But given that this model will be deployed on a small edge device (a drone),
+I opt for ONNX INT8 model due to its lesser latency.
 ```
 
