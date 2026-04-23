@@ -46,8 +46,12 @@ def evaluate():
     service = ParkingInferenceService(MODEL_PATH)
     image_paths = sorted(INPUT_DIR.glob("*.jpg"))
 
+    
+
     if not image_paths:
         raise FileNotFoundError(f"No images found in {INPUT_DIR}")
+    
+    print("\n===== INT8 ACCURACY STARTED =====")
 
     all_tp = all_fp = all_fn = 0
 
