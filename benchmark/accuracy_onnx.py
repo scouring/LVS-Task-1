@@ -51,7 +51,11 @@ def evaluate():
     if not image_paths:
         raise FileNotFoundError(f"No images found in {INPUT_DIR}")
     
-    print("\n===== ONNX ACCURACY STARTED =====")
+    print("\n===== ACCURACY EVALUATION START =====\n")
+    print(f"Images found    : {len(image_paths)}")
+    print(f"Labels dir      : {LABELS_DIR}")
+    print(f"Conf threshold  : {CONF_THRESHOLD}")
+    print(f"IoU threshold   : {IOU_THRESHOLD}\n")
 
     all_tp = all_fp = all_fn = 0
 
