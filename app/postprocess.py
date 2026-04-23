@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 
 def annotate_results(image, detections, conf_threshold=0.5):
@@ -24,18 +25,14 @@ def annotate_results(image, detections, conf_threshold=0.5):
             image,
             (int(x1), int(y1)),
             (int(x2), int(y2)),
-            color,
-            2
+            color, 2
         )
-
         cv2.putText(
             image,
             f"{label}: {conf:.2f}",
             (int(x1), int(y1) - 10),
             cv2.FONT_HERSHEY_SIMPLEX,
-            0.5,
-            color,
-            2
+            0.5, color, 2
         )
 
     return image, occupied_count, empty_count

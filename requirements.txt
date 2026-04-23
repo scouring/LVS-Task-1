@@ -1,5 +1,6 @@
 ultralytics
 onnx
 onnxruntime
+onnxconverter-common
 opencv-python
 numpy

@@ -6,7 +6,7 @@ from app.inference_service import ParkingInferenceService
 from app.preprocess import preprocess_image
 
 
-MODEL_PATH = "models/parking_detector.onnx"
+MODEL_PATH = "models/parking_detector_int8.onnx"
 INPUT_DIR = Path("data/validation_images")
 
 
@@ -29,7 +29,7 @@ def benchmark(num_warmup: int = 5):
             f"No images found in {INPUT_DIR}"
         )
 
-    print("\n===== ONNX BENCHMARK START =====\n")
+    print("\n===== INT8 ONNX BENCHMARK START =====\n")
     print(f"Images found: {len(image_paths)}")
     print(f"Warmup runs: {num_warmup}\n")
 
@@ -79,7 +79,7 @@ def benchmark(num_warmup: int = 5):
     # --------------------------------
     # Results
     # --------------------------------
-    print("===== ONNX BENCHMARK RESULTS =====")
+    print("===== INT8 ONNX BENCHMARK RESULTS =====")
     print(f"Images processed      : {num_images}")
     print(f"Total time (sec)      : {total_time_sec:.4f}")
     print(f"Throughput (img/sec)  : {throughput:.2f}")
