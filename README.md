@@ -115,7 +115,7 @@ This will:
 
 ### Benchmarking Workflow ###
 ```bash
-python -m benchmark.benchmark_onnx_inference.py
+python -m benchmark.benchmark_onnx_inference
 ```
 ```text
 This will calculate:
@@ -124,7 +124,7 @@ This will calculate:
 - throughput
 ```
 ```bash
-python -m benchmark.accuracy_onnx.py
+python -m benchmark.accuracy_onnx
 ```
 ```text
 This will calculate accuracy metrics:
