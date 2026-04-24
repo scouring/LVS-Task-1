@@ -74,3 +74,7 @@ function puts a bounding box, confidence score and label around each surrounding
 
 #### Annotated Video Output - Detection over time. ####
 
+<p align="center">
+  <img src="Recording 2026-04-24 095553.gif" width="700" />
+</p>
+
