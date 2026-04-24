@@ -86,7 +86,7 @@ score and label around each surrounding detection.
 
 ----
 
-#### <h3 align="center"> Annotated Video Output - Detection over time. </h3> ####
+#### <h3 align="center"> Annotated Video Output - Detections over time. </h3> ####
 
 <p align="center">
   <img src="Recording 2026-04-24 095553.gif" width="700" />
