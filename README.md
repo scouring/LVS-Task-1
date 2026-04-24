@@ -128,8 +128,17 @@ The demo
 ```
 #### <h3 align="center"> Demo of main.cpp - showing the pipeline. </h3> ####
 
+#### <h3 align="center"> Demo 1 - runs the pipeline</h3> ####
 <p align="center">
-  <img src="demo1.png" width="32%" />
-  <img src="demo2.png" width="32%" />
-  <img src="demo3.png" width="32%" />
+  <img src="demo1.png" width=500 />
+</p>
+----
+#### <h3 align="center"> Demo 2 - swaps in a fake IMU sensor </h3> ####
+<p align="center">
+  <img src="demo2.png" width=500 />
+ </p>
+ ----
+ #### <h3 align="center"> Demo 3 - uses the CSV as a GPS source </h3> ####
+ <p align="center">
+  <img src="demo3.png" width=500 />
 </p>
