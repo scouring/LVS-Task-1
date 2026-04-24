@@ -128,7 +128,7 @@ This will calculate:
 - throughput
 ```
 ```bash
-python -m benchmark.accuracy_int8
+python -m benchmark.accuracy_fp16
 ```
 ```text
 This will calculate accuracy metrics:
