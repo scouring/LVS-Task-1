@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 """
-download_model.py — Download pre-trained YOLOv8n ONNX model for C++ inference.
+download_model.py — Download pre-trained YOLOv5n ONNX model for C++ inference.
 
 Usage:
-    python3 scripts/download_model.py                  # YOLOv8n (default)
-    python3 scripts/download_model.py --model yolov8s  # YOLOv8 small
     python3 scripts/download_model.py --model yolov5n  # YOLOv5 nano
 
 Requirements:
-    pip install ultralytics          # for YOLOv8
+    pip install ultralytics          # for YOLOv5
     pip install torch torchvision    # optional: faster export
 """
 
@@ -18,14 +16,10 @@ import os
 
 MODEL_URLS = {
     # Direct ONNX downloads (no Python deps needed)
-    "yolov8n": "https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8n.pt",
-    "yolov8s": "https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8s.pt",
-    "yolov8m": "https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8m.pt",
-    "yolov5n": "https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov5nu.pt",
-    "yolov5s": "https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov5su.pt",
+    "yolov5n": "https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov5nu.pt"
 }
 
-def download_yolov8_onnx(model_name: str, output_dir: str, img_size: int = 640):
+def download_yolov5n_onnx(model_name: str, output_dir: str, img_size: int = 640):
     """Download .pt and export to ONNX via ultralytics."""
     try:
         from ultralytics import YOLO
@@ -101,7 +95,7 @@ def download_coco_names(output_dir: str):
 
 def main():
     parser = argparse.ArgumentParser(description="Download YOLO ONNX model")
-    parser.add_argument("--model", default="yolov8n",
+    parser.add_argument("--model", default="yolov5n",
                         choices=list(MODEL_URLS.keys()),
                         help="Which model to download (default: yolov8n)")
     parser.add_argument("--output-dir", default="models",
@@ -117,7 +111,7 @@ def main():
     print(f"  Img size: {args.imgsz}")
     print(f"{'─'*50}\n")
 
-    onnx_path = download_yolov8_onnx(args.model, args.output_dir, args.imgsz)
+    onnx_path = download_yolov5n_onnx(args.model, args.output_dir, args.imgsz)
     names_path = download_coco_names(args.output_dir)
 
     print(f"\n{'─'*50}")

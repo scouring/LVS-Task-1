@@ -1,28 +1,39 @@
-# YOLO Video Inference — C++
+<h1 align="center">LVS Task 3 – Object Detection Video Demo - YOLO Video Inference — C++</h1>
 
-Real-time object detection on video using YOLOv8/v5 ONNX models and **OpenCV DNN**.  
-No PyTorch, no CUDA required (CPU works out of the box; CUDA optional).
+<p align="center">
+  Real-time object detection on video using YOLOv5nu ONNX model and **OpenCV DNN**.  
+  No PyTorch, no CUDA required (CPU works out of the box; CUDA optional).
+</p>
 
 ---
 
-## Project Structure
+#### Installation ####
 
+#### 1. Clone the repository ####
+```bash
+git clone -b feature/yolo-cpp https://github.com/scouring/LVS-Task-1.git
+cd LVS-Task-1
 ```
+
+#### Project Structure ####
+
+```text
 yolo_cpp/
 ├── src/
 │   └── yolo_inference.cpp   # Main C++ inference engine
 ├── scripts/
 │   └── download_model.py    # Downloads & exports ONNX model
-├── models/                  # ONNX model + class names go here
+├── models/   
+├── videos/                  
 ├── CMakeLists.txt
 └── README.md
 ```
 
 ---
 
-## 1 — Prerequisites
+#### 1 — Prerequisites
 
-### Ubuntu / Debian
+#### Ubuntu / Debian
 ```bash
 sudo apt update
 sudo apt install -y cmake g++ libopencv-dev
@@ -30,33 +41,25 @@ sudo apt install -y cmake g++ libopencv-dev
 # sudo apt install -y libopencv-dev  (build OpenCV with CUDA yourself, or use GPU image)
 ```
 
-### macOS (Homebrew)
+---
+
+#### 2 — Download Pre-Trained Model
+
 ```bash
-brew install cmake opencv
+pip install ultralytics                             # one-time install
+python3 scripts/download_model.py --model yolov5n   # small  (~5 MB)
 ```
 
-### Windows (vcpkg)
-```powershell
-vcpkg install opencv4[dnn]:x64-windows
-# Add -DCMAKE_TOOLCHAIN_FILE=.../vcpkg/scripts/buildsystems/vcpkg.cmake to cmake
-```
+This exports `models/yolov5n.onnx` and `models/coco.names` ready for C++.
 
 ---
 
-## 2 — Download Pre-Trained Model
-
-```bash
-pip install ultralytics          # one-time install
-python3 scripts/download_model.py               # YOLOv8n (~6 MB ONNX)
-python3 scripts/download_model.py --model yolov8s   # small  (~22 MB)
-python3 scripts/download_model.py --model yolov8m   # medium (~52 MB)
+#### 3 - Download a video, create a videos & models folder
+```text
+The video I used is 7MB. You can access it here: https://drive.google.com/drive/folders/1eIZF-6hF_tnmx6JSEw9ZDspftaeHAr9p?usp=drive_link. After download, create a videos folder and a models folder at the root of this project (as in Project Structure above). Place the video inside.
 ```
 
-This exports `models/yolov8n.onnx` and `models/coco.names` ready for C++.
-
----
-
-## 3 — Build
+#### 4 — Build
 
 ```bash
 mkdir build && cd build
@@ -67,23 +70,23 @@ make -j$(nproc)
 
 ---
 
-## 4 — Run
+#### 5 — Run
 
 ```bash
 # On a video file
 ./build/yolo_inference \
-    --model   models/yolov8n.onnx \
+    --model   models/yolov5nu.onnx \
     --video   /path/to/video.mp4 \
     --classes models/coco.names
 
 # Webcam (device 0)
 ./build/yolo_inference \
-    --model models/yolov8n.onnx \
+    --model models/yolov5nu.onnx \
     --video 0
 
 # Save annotated output + no window (headless / server)
 ./build/yolo_inference \
-    --model   models/yolov8n.onnx \
+    --model   models/yolov5nu.onnx \
     --video   input.mp4 \
     --classes models/coco.names \
     --save    output.mp4 \
@@ -91,14 +94,14 @@ make -j$(nproc)
 
 # CUDA acceleration
 ./build/yolo_inference \
-    --model  models/yolov8n.onnx \
+    --model  models/yolov5nu.onnx \
     --video  input.mp4 \
     --cuda
 ```
 
 ---
 
-## 5 — All CLI Options
+#### 6 — All CLI Options
 
 | Flag | Type | Default | Description |
 |------|------|---------|-------------|
@@ -117,33 +120,9 @@ make -j$(nproc)
 
 ---
 
-## 6 — Supported Models
-
-| Model | Size | COCO mAP | Speed (CPU) |
-|-------|------|-----------|-------------|
-| YOLOv8n | 6 MB | 37.3 | ~15 FPS |
-| YOLOv8s | 22 MB | 44.9 | ~8 FPS |
-| YOLOv8m | 52 MB | 50.2 | ~3 FPS |
-| YOLOv5n | 4 MB | 28.0 | ~20 FPS |
-
-> Speeds are approximate on a modern CPU. CUDA speeds up 5–10×.
-
----
-
-## 7 — Customising for Your Own Model
-
-1. Export your model to ONNX format at input size 640×640 (or match `--width`/`--height`).
-2. Create a plain-text `.names` file with one class per line.
-3. Pass both via `--model` and `--classes`.
-
-The inference engine auto-detects YOLOv5 vs YOLOv8 output layout.
-
----
-
-## Troubleshooting
-
-**`error: OpenCV not found`** — ensure `libopencv-dev` (Linux) or `opencv` (brew) is installed and `pkg-config --modversion opencv4` returns a version.
-
-**Black boxes / wrong detections** — check `--width`/`--height` match the model's training size, and that `--classes` matches the number of classes the model outputs.
-
-**CUDA not available** — rebuild OpenCV with `-DWITH_CUDA=ON`, or omit `--cuda` to run on CPU.
+### Author ###
+```text
+Sherry Courington
+AI/Computer Vision Engineer
+Visual Computing | Edge AI | MLOps
+```
