@@ -129,5 +129,7 @@ The demo
 #### <h3 align="center"> Demo of main.cpp - showing the pipeline. </h3> ####
 
 <p align="center">
-  <img src="Recording 2026-04-24 095553.gif" width="700" />
+  <img src="demo1.png" width="32%" />
+  <img src="demo2.png" width="32%" />
+  <img src="demo3.png" width="32%" />
 </p>
