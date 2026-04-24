@@ -28,14 +28,14 @@
 
 ### II. **Task 2 Post-Training Quantization** ###
 
-<h3 align="center"> The Quantized model artifacts: </h3>
+#### <h3 align="center"> The Quantized model artifacts: </h3> ####
 ```text
 - Base model      -> branch: feature/inference-best.pt    file: models/best.pt
 - ONNX FP32 model -> branch: feature/inference-onnx       file: models/parking_detector.onnx
 - ONNX FP16 model -> branch: feature/inference-fp16       file: models/parking_detector_fp16.onnx
 - ONNX INT8 model -> branch: feature/inference-int8       file: models/parking_detector_int8.onnx
 ```
-<h3 align="center"> Results Table </h3>
+#### <h3 align="center"> Results Table </h3> ####
 <div align="center">
 
 |                        | Best.pt | ONNX FP32 | ONNX FP16 | ONNX INT8 |
