@@ -1,7 +1,0 @@
-/home/scouring/yolo_cpp/build/CMakeFiles/yolo_inference.dir
-/home/scouring/yolo_cpp/build/CMakeFiles/edit_cache.dir
-/home/scouring/yolo_cpp/build/CMakeFiles/rebuild_cache.dir
-/home/scouring/yolo_cpp/build/CMakeFiles/list_install_components.dir
-/home/scouring/yolo_cpp/build/CMakeFiles/install.dir
-/home/scouring/yolo_cpp/build/CMakeFiles/install/local.dir
-/home/scouring/yolo_cpp/build/CMakeFiles/install/strip.dir

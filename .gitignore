@@ -1,0 +1,8 @@
+build/
+--classes
+--model
+--video
+yolov5nu.pt
+models/coco.names
+models/yolov5nu.onnx
+videos/
