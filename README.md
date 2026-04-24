@@ -103,3 +103,31 @@ The video's top right corner shows the model's latency and frames per second (FP
 The only optimizations I used were converting to an ONNX format. I chose YOLOv5
 because it is a smaller, faster model (20 FPS) - even on a CPU.
 ```
+
+### IV. **Hardware Abstraction Layer Stub**
+
+```text
+The branch feature/HAL contains the C++ code for the Hardware Abstraction Layer Stub.
+Installation and instructions for running the demo are in its README.
+```
+
+```text
+The sensor input contract is in:
+- include/sensor_interface.hpp
+```
+----
+```text
+The Simulated Sensor
+- src/simulated_sensor.cpp
+
+The Hardware Sensor
+- src/hardware_sensor.cpp
+
+The demo
+- main.cpp
+```
+#### <h3 align="center"> Demo of main.cpp - showing the pipeline. </h3> ####
+
+<p align="center">
+  <img src="Recording 2026-04-24 095553.gif" width="700" />
+</p>
