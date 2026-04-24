@@ -81,12 +81,12 @@ down the frames while maintaining the aspect ration. It also normalizes pixel va
 loads the preprocessed frames into the NN and runs the inference. The postprocess function reads bounding
 boxes, finds the highest scoring class, converts coordinates to original frame size, and runs Non-Max
 Suppression (NMS) to eliminate duplicate boxes. The drawDetections function puts a bounding box, confidence
- score and label around each surrounding detection.
+score and label around each surrounding detection.
 ```
 
 ----
 
-#### Annotated Video Output - Detection over time.
+#### <h3 align="center"> Annotated Video Output - Detection over time. </h3> ####
 
 <p align="center">
   <img src="Recording 2026-04-24 095553.gif" width="700" />
@@ -94,7 +94,7 @@ Suppression (NMS) to eliminate duplicate boxes. The drawDetections function puts
 
 ----
 
-#### Basic Performance ####
+#### <h3 align="center"> Basic Performance </h3> ####
 
 ```text
 The video's top right corner shows the model's latency and frames per second (FPS).
