@@ -59,20 +59,29 @@ I opt for ONNX INT8 model due to its lesser latency.
 
 ----
 
-### II. **Task 3 Object Detection Video Demo**
+### III. **Task 3 Object Detection Video Demo**
 
 ```text
-The branch *feature/yolo-cpp* - contains the C++ code to download a YOLOv5 model and the code to convert it to an ONNX model file. Instructions are in its README.
+The branch *feature/yolo-cpp* - contains the C++ code to download a YOLOv5 model and the code to convert it to an
+ONNX model file. Instructions are in its README.
 ```
 ----
 
 ```text
-The input video is a public sample. It came from https://free-stock.video/video/road-city-traffic-street-vehicles-cars-urban-3544#google_vignette.
-You may download it here: https://drive.google.com/file/d/1UElgNUtfscP1woD-5Yo2ZxOO0mhyk2lV/view?usp=drive_link
+The input video is a public sample. It came from https://free-stock.video/video/road-city-traffic-street-vehicles
+-cars-urban-3544#google_vignette. You may download it here: https://drive.google.com/file/d/
+1UElgNUtfscP1woD-5Yo2ZxOO0mhyk2lV/view?usp=drive_link
 ```
 
 ```text
-The YOLO model variant I used is YOLOv5. I chose it due to its small size (4 MB) and it speed (20 FPS). To run inference on the video, I exported it to an ONNX format. The main function opens the video file and reads metadata. It uses a 'while' loop to pull in one frame at a time. The preprocess function resizes, scales down the frames while maintaining the aspect ration. It also normalizes pixel values. The detect function loads the preprocessed frames into the NN and runs the inference. The postprocess function reads bounding boxes, finds the highest scoring class, converts coordinates to original frame size, and runs Non-Max Suppression (NMS) to eliminate duplicate boxes. The drawDetections function puts a bounding box, confidence score and label around each surrounding detection.
+The YOLO model variant I used is YOLOv5. I chose it due to its small size (4 MB) and it speed (20 FPS). To run
+inference on the video, I exported it to an ONNX format. The main function opens the video file and reads
+metadata. It uses a 'while' loop to pull in one frame at a time. The preprocess function resizes, scales
+down the frames while maintaining the aspect ration. It also normalizes pixel values. The detect function
+loads the preprocessed frames into the NN and runs the inference. The postprocess function reads bounding
+boxes, finds the highest scoring class, converts coordinates to original frame size, and runs Non-Max
+Suppression (NMS) to eliminate duplicate boxes. The drawDetections function puts a bounding box, confidence
+ score and label around each surrounding detection.
 ```
 
 ----
@@ -91,5 +100,6 @@ The YOLO model variant I used is YOLOv5. I chose it due to its small size (4 MB)
 The video's top right corner shows the model's latency and frames per second (FPS).
 - FPS = ~10.1
 - Inf = ~1.8 ms
-The only optimizations I used were converting to an ONNX format. I chose YOLOv5 because it is a smaller, faster model (20 FPS) - even on a CPU.
+The only optimizations I used were converting to an ONNX format. I chose YOLOv5
+because it is a smaller, faster model (20 FPS) - even on a CPU.
 ```
