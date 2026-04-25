@@ -82,18 +82,13 @@ cd LVS-Task-1
 
 Place these in the project structure under "data" (as shown above)
 ```
-#### 3. Create a folder at the base of the project for the output/predictions
-```bash
-As shown in the project structure above:
-├── output/
-│   └── predictions/
-```
-#### 4. Create a virtual environment ####
+
+#### 3. Create a virtual environment ####
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
-#### 5. Install dependencies ####
+#### 4. Install dependencies ####
 ```bash
 pip install -r requirements.txt
 ```
@@ -104,7 +99,7 @@ pip install -r requirements.txt
 
 #### Run PyTorch Inference ####
 ```bash
-python run_batch_inference.py
+python run_edge_inference.py
 ```
 ```text
 This will:

@@ -12,7 +12,7 @@ INPUT_DIR = Path("data/validation_images")
 
 def benchmark(num_warmup: int = 5):
     """
-    Benchmark ONNX batch image inference.
+    Benchmark ONNX image inference.
 
     Reports:
         throughput (images/sec)
